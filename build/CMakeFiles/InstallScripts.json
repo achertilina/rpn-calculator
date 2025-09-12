@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/anastasia/dev/project7/rpn_calculator/build/cmake_install.cmake",
+		"/Users/anastasia/dev/project7/rpn_calculator/build/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

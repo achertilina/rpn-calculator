@@ -1,0 +1,54 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C++ Launch (main) - Debug RPN Calculator",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/rpn_calculator",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb",
+      "preLaunchTask": "build",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "C++ Launch (tests) - Debug Tests",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/test_rpn",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb",
+      "preLaunchTask": "build",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "C++ Attach to Process",
+      "type": "cppdbg",
+      "request": "attach",
+      "program": "${workspaceFolder}/build/rpn_calculator",
+      "processId": "${command:pickProcess}",
+      "MIMode": "lldb",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

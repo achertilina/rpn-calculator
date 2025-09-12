@@ -1,0 +1,72 @@
+Start testing: Sep 12 10:08 MSK
+----------------------------------------------------------
+1/1 Testing: RPN_Tests
+1/1 Test: RPN_Tests
+Command: "/Users/anastasia/dev/project7/rpn_calculator/build/tests/rpn_tests"
+Directory: /Users/anastasia/dev/project7/rpn_calculator/build/tests
+"RPN_Tests" start time: Sep 12 10:08 MSK
+Output:
+----------------------------------------------------------
+[==========] Running 18 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 18 tests from RPNTest
+[ RUN      ] RPNTest.BasicAddition
+[       OK ] RPNTest.BasicAddition (0 ms)
+[ RUN      ] RPNTest.Subtraction
+[       OK ] RPNTest.Subtraction (0 ms)
+[ RUN      ] RPNTest.Multiplication
+[       OK ] RPNTest.Multiplication (0 ms)
+[ RUN      ] RPNTest.Division
+[       OK ] RPNTest.Division (0 ms)
+[ RUN      ] RPNTest.DivisionByZero
+[       OK ] RPNTest.DivisionByZero (0 ms)
+[ RUN      ] RPNTest.InvalidExpression
+[       OK ] RPNTest.InvalidExpression (0 ms)
+[ RUN      ] RPNTest.ComplexExpression
+[       OK ] RPNTest.ComplexExpression (0 ms)
+[ RUN      ] RPNTest.MultipleOperations
+[       OK ] RPNTest.MultipleOperations (0 ms)
+[ RUN      ] RPNTest.EmptyExpression
+[       OK ] RPNTest.EmptyExpression (0 ms)
+[ RUN      ] RPNTest.TooManyOperands
+[       OK ] RPNTest.TooManyOperands (0 ms)
+[ RUN      ] RPNTest.InvalidToken
+[       OK ] RPNTest.InvalidToken (0 ms)
+[ RUN      ] RPNTest.DecimalNumbers
+[       OK ] RPNTest.DecimalNumbers (0 ms)
+[ RUN      ] RPNTest.NegativeNumbers
+[       OK ] RPNTest.NegativeNumbers (0 ms)
+[ RUN      ] RPNTest.SingleNumber
+[       OK ] RPNTest.SingleNumber (0 ms)
+[ RUN      ] RPNTest.ComplexExpressionsWithDecimals
+/Users/anastasia/dev/project7/rpn_calculator/tests/test_rpn.cpp:76: Failure
+The difference between evaluate_rpn("3.5 2.5 * 1.5 + 2 /") and 4.75 is 0.375, which exceeds 1e-9, where
+evaluate_rpn("3.5 2.5 * 1.5 + 2 /") evaluates to 5.125,
+4.75 evaluates to 4.75, and
+1e-9 evaluates to 1.0000000000000001e-09.
+
+[  FAILED  ] RPNTest.ComplexExpressionsWithDecimals (0 ms)
+[ RUN      ] RPNTest.MultipleSpaces
+[       OK ] RPNTest.MultipleSpaces (0 ms)
+[ RUN      ] RPNTest.NotEnoughOperandsForMultipleOperators
+[       OK ] RPNTest.NotEnoughOperandsForMultipleOperators (0 ms)
+[ RUN      ] RPNTest.MixedOperations
+[       OK ] RPNTest.MixedOperations (0 ms)
+[----------] 18 tests from RPNTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 18 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 17 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] RPNTest.ComplexExpressionsWithDecimals
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"RPN_Tests" end time: Sep 12 10:08 MSK
+"RPN_Tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 12 10:08 MSK
