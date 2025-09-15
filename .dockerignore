@@ -1,0 +1,11 @@
+# .dockerignore
+build/
+cmake-build*/
+CMakeFiles/
+CMakeCache.txt
+*.o
+*.a
+*.obj
+*.pch
+*.pdb
+*.log

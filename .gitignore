@@ -34,7 +34,4 @@ Thumbs.db
 *.log
 Testing/
 
-# Docker
-Dockerfile
-.dockerignore
-EOF
+
