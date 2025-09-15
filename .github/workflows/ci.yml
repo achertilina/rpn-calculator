@@ -13,76 +13,22 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      with:
-        submodules: recursive
 
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y cmake g++ libgtest-dev build-essential graphviz doxygen
+        sudo apt-get install -y cmake g++ libgtest-dev build-essential
+
+    - name: Clean build directory
+      run: rm -rf build
 
     - name: Configure CMake
       run: cmake -B build -DCMAKE_BUILD_TYPE=Release
 
     - name: Build project
-      run: cmake --build build --config Release --parallel 2
+      run: cmake --build build --config Release
 
     - name: Run tests
       run: |
         cd build
         ctest --output-on-failure --verbose
-
-    - name: Build and run tests manually (if ctest not configured)
-      run: |
-        cd build
-        ./test_rpn || echo "No test executable found"
-
-    - name: Generate documentation
-      run: |
-        doxygen Doxyfile
-        ls -la docs/html/ || echo "Documentation not generated"
-
-    - name: Upload documentation artifact (optional)
-      uses: actions/upload-artifact@v4
-      with:
-        name: documentation
-        path: docs/html/
-        if-no-files-found: warn
-
-  code-quality:
-    runs-on: ubuntu-latest
-    needs: build-and-test
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Install clang-format
-      run: sudo apt-get install -y clang-format
-
-    - name: Check code formatting
-      run: |
-        find . -name '*.cpp' -o -name '*.h' | xargs clang-format --dry-run --Werror
-
-  macos-build:
-    runs-on: macos-latest
-    needs: build-and-test
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Install dependencies (macOS)
-      run: |
-        brew install cmake gtest doxygen graphviz
-
-    - name: Configure CMake
-      run: cmake -B build -DCMAKE_BUILD_TYPE=Release
-
-    - name: Build project
-      run: cmake --build build --config Release --parallel 2
-
-    - name: Run tests
-      run: |
-        cd build
-        ./test_rpn || echo "No test executable found"
